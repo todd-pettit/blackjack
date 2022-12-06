@@ -24,7 +24,7 @@ class Deck:
         cut_selection = round(deck_length/2)
         partition1 = self.deck[:cut_selection]
         partition2 = self.deck[cut_selection:]
-        self.deck = [partition2 + partition1]
+        self.deck = partition2 + partition1
 
 
 if __name__ == '__main__':
