@@ -1,8 +1,9 @@
 import card
+import random
 
 class Deck:
     def __init__(self):
-        suits = ["clubs", "hearts", "diamonds", "spades"]
+        suits = ["Clubs", "Hearts", "Diamonds", "Spades"]
         values = ["A", "K", "Q", "J", 10, 9, 8, 7, 6, 5, 4, 3, 2]
         deck = []
         for suit in suits:
@@ -15,6 +16,14 @@ class Deck:
         for card in self.deck:
             print(card.value, "of", card.suit)
 
+    def shuffle_deck(self):
+        random.shuffle(self.deck)
+
+    def cut_deck(self):
+        pass
+
 if __name__ == '__main__':
     current_deck = Deck()
+    current_deck.show_deck()
+    current_deck.shuffle_deck()
     current_deck.show_deck()
