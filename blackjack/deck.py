@@ -20,10 +20,17 @@ class Deck:
         random.shuffle(self.deck)
 
     def cut_deck(self):
-        pass
+        deck_length = len(self.deck)
+        cut_selection = round(deck_length/2)
+        partition1 = self.deck[:cut_selection]
+        partition2 = self.deck[cut_selection:]
+        self.deck = [partition2 + partition1]
+
 
 if __name__ == '__main__':
     current_deck = Deck()
     current_deck.show_deck()
     current_deck.shuffle_deck()
+    current_deck.show_deck()
+    current_deck.cut_deck()
     current_deck.show_deck()
